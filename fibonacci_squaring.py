@@ -20,7 +20,7 @@ def squaringAlgorithm(x, n): # Fibonacci with squaring algorithm
     # and the 'n' we want to find. Returns the final cal-
     # culated matrix with the fibonnaci number of 'n'.
    
-    if n == 1:
+    if n <= 1:
         return x   
     elif n%2 == 0: 
         return squaringAlgorithm(np.dot(x,x), n/2)                  # squaring(x**2, n/2)
@@ -32,7 +32,7 @@ def fibonacci(n):   # Loop Fibonacci
     # loop fibonacci algorithm. in execution time is
     # worse than the squaring algorithm so far. It's
     # complexity is O(n).
-    if n == 1:
+    if n <= 1:
         return n
     else:
         a, b = 1, 0
@@ -44,12 +44,12 @@ def fibonacci(n):   # Loop Fibonacci
 
 n = int()
 try:
-    n = int(input("Enter number (int): "))
+    n = int(input("Enter positive number: "))
 except ValueError:
     print("Enter only numbers please...")
     quit()
 
-print("\nFibonacci number of "+str(n)+" is: "+str(squaringAlgorithm(F, n)[0,1]))
+print("\nFibonacci of '"+str(n)+"' is: "+str(squaringAlgorithm(F, n)[0,1]))
 
 
 
